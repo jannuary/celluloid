@@ -514,7 +514,9 @@ celluloid_seek_bar_init(CelluloidSeekBar *bar)
 	gtk_scale_set_draw_value(GTK_SCALE(bar->seek_bar), FALSE);
 	gtk_range_set_increments(GTK_RANGE(bar->seek_bar), 10, 10);
 	gtk_widget_set_can_focus(bar->seek_bar, FALSE);
-
+	
+  	gtk_range_set_flippable(GTK_RANGE(bar->seek_bar), FALSE);
+	
 	gtk_popover_set_position(GTK_POPOVER(bar->popover), GTK_POS_TOP);
 	gtk_popover_set_child(GTK_POPOVER(bar->popover), bar->popover_label);
 	gtk_widget_set_visible(bar->popover_label, TRUE);
